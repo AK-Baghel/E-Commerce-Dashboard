@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import SignUp from './components/SignUp';
+import PrivateComponent from './components/PrivateComponent';
+import Login from './components/Login';
 import './App.css'
 
 function App() {
@@ -11,15 +13,18 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route exact path="" element={<h1>React Js is here for you</h1>} />
-          <Route exact path="add" element={<h1>product is Add here</h1>} />
-          <Route exact path="update" element={<h1>product Updating here</h1>} />
-          <Route exact path="logout" element={<h1>product Logour from here</h1>} />
-          <Route exact path="profile" element={ <Link to='/'>Click me</Link>} />
-          <Route exact path="signup" element={<SignUp/>}>Sign Up</Route>
+
+          <Route element={<PrivateComponent />}>          {/*part of outlet in this route all compo. will show only after sign up. This is part of Private Component*/}
+            <Route exact path="/" element={<h1>React Js is here for you</h1>} />
+            <Route exact path="/add" element={<h1>product is Add here</h1>} />
+            <Route exact path="/update" element={<h1>product Updating here</h1>} />
+            <Route exact path="/logout" element={<h1>product Logout from here</h1>} />
+            <Route exact path="/profile" element={<h1>Profile</h1>} />
+          </Route>
+            <Route exact path="/signup" element={<SignUp />}>Sign Up</Route>
+            <Route exact path="/login" element={<Login/>} ></Route>
         </Routes>
-        
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </>
   )

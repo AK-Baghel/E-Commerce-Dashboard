@@ -75,3 +75,12 @@
 .appButton:hover{
   border: 1.5px solid blue;
 }
+
+/* .login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  flex-direction: column;
+  
+} */
