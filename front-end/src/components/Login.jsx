@@ -3,9 +3,19 @@ import React, { useState } from "react";
 const Login = () => {
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
-    const handleLogin=()=>{
+    const handleLogin=async ()=>{
         console.log(email)
         console.log(password)
+        let result=await fetch("http://localhost:5000/login",{
+            method:"post",
+            body:JSON.stringify({email,password}),
+            headers:{
+                "Content-Type":"application/json"
+            }
+        });
+        result=await result.json();
+        console.log(result);
+        
     }
 
     return (
