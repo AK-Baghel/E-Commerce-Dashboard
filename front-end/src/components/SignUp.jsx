@@ -8,14 +8,11 @@ const SignUp = () => {
     const navigate=useNavigate();
 
     useEffect(()=>{
-        const auth=localStorage.getItem('users');
+        const auth=localStorage.getItem('user');
         if(auth){
             navigate("/");
         }
     })
-    
-    const collectData = () => {
-        console.log(name, email, password);
         
         const collectData = async () => {
             let result = await fetch('http://localhost:5000/register', {
@@ -30,17 +27,10 @@ const SignUp = () => {
 
             localStorage.setItem("user",JSON.stringify(result));
 
-            if(result)
                 navigate("/");
 
         }
-
-        collectData();
-
-        // setname("");
-        // setemail("");
-        // setpassword("");
-    }
+        
     return (
         <div className='register'>
             <h1>Register</h1>

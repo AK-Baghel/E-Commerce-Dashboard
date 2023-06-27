@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
+    const navigate=useNavigate();
+    useEffect(()=>{
+        const auth=localStorage.getItem('user');
+        console.log(auth);
+        if(auth){
+            navigate("/login");
+        }
+    },[]);
     const handleLogin=async ()=>{
-        console.log(email)
-        console.log(password)
         let result=await fetch("http://localhost:5000/login",{
             method:"post",
             body:JSON.stringify({email,password}),
@@ -15,7 +22,13 @@ const Login = () => {
         });
         result=await result.json();
         console.log(result);
-        
+        if(result){
+            localStorage.setItem("user",JSON.stringify(result));
+            navigate('/');
+        }
+        else{
+            alert("Please Enter Correct Details");
+        }
     }
 
     return (
