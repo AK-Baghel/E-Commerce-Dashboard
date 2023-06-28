@@ -61,6 +61,12 @@
   margin: 20px;
   flex-direction: column;
 }
+.invalid-input{
+  color: red;
+  width: 41%;
+  margin-top: 5px;
+  margin-bottom: -10px;
+}
 
 .inputBox {
   margin-top: 25px;
@@ -75,6 +81,7 @@
 .inputBox placeholder {
   color: grey;
 }
+
 
 .appButton {
   margin: 25px;

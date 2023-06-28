@@ -15,7 +15,7 @@ const Nav = () => {
                 auth ? <ul className='nav-ul'>
                 <img className='logo' onClick={()=>{navigate("/")}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSETvC0XoZ1UHOe8NxPx2AK5WCKS-J1RUuEpw&usqp=CAU" alt="logo" />
                 <li><Link to='/'>Products</Link></li>
-                <li><Link to='/add'>Add Products</Link></li>
+                <li><Link to='/add-product'>Add Products</Link></li>
                 <li><Link to='/update'>Update Product</Link></li>
                 <li><Link to='/profile'>Profile</Link></li>
                 <li><Link onClick={logout} to='/signup' >Logout ({JSON.parse(auth).name})</Link></li>

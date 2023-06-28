@@ -17,7 +17,7 @@ function App() {
 
           <Route element={<PrivateComponent />}>          {/*part of outlet in this route all compo. will show only after sign up. This is part of Private Component*/}
             <Route exact path="/" element={<h1>React Js is here for you</h1>} />
-            <Route exact path="/add" element={<AddProduct/>} />
+            <Route exact path="/add-product" element={<AddProduct/>} />
             <Route exact path="/update" element={<h1>product Updating here</h1>} />
             <Route exact path="/logout" element={<h1>product Logout from here</h1>} />
             <Route exact path="/profile" element={<h1>Profile</h1>} />
