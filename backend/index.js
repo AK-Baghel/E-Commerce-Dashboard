@@ -16,7 +16,6 @@ app.post("/register",async (req, resp) => {
     result=result.toObject();
     delete result.password
     resp.send(result);
-    // console.log(req.body); 
 });
 
 
@@ -71,6 +70,15 @@ app.put('/product/:id',async(req,resp)=>{
     resp.send(result);
 })
 
+app.get('/search/:key',async(req,resp)=>{
+    let result=await Product.find({
+        "$or":[
+            {name:{$regex:req.params.key}},
+            {company:{$regex:req.params.key}},
+            {category:{$regex:req.params.key}},
+        ]
+    })
+    resp.send(result)
+})
+
 app.listen(5000);
-
-

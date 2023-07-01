@@ -53,6 +53,7 @@
   bottom: 0;
   text-align: center;
   width: 100%;
+  position: fixed;
 }
 
 .register , .product{
@@ -120,4 +121,9 @@
 }
 .product-list ul{
   margin: -8px;
+}
+.box{
+  margin-top: -10px;
+  margin-bottom: 30px;
+  border-color: rgb(0, 119, 255);
 }
